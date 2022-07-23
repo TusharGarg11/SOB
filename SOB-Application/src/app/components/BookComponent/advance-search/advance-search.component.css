@@ -1,0 +1,20 @@
+input[type="text"] {
+  width: 100%;
+  padding: 5px 40px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 2em;
+  box-sizing: border-box;
+}
+
+.inputWithIcon {
+  position: relative;
+}
+
+.inputWithIcon i {
+  position: absolute;
+  left: 20px;
+  top: 18px;
+  color: gray;
+}

@@ -1,0 +1,24 @@
+<table class="table table-sm table-striped table-hover">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Title</th>
+      <th scope="col">Author</th>
+      <th scope="col">Publician</th>
+      <th scope="col">Category</th>
+      <th scope="col">Rating</th>
+      <th scope="col">Price</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="clickableTableRow" (click)="displayBookReview(book)" *ngFor="let book of books">
+      <th scope="row">{{book.bookId}}</th>
+      <td>{{book.title}}</td>
+      <td>{{book.author}}</td>
+      <td>{{book.publician}}</td>
+      <td>{{book.category}}</td>
+      <td>{{book.rating}}</td>
+      <td>{{book.price}}</td>
+    </tr>
+  </tbody>
+</table>

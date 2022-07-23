@@ -1,0 +1,71 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col">
+            <div class="container">
+                <img [src]="imageSource" class="img-fluid"/>
+            </div>
+        </div>
+        <div class="col mt-1">
+            <div class="cd-form">
+                <div>
+                    <h3>Add Book</h3>
+                </div>
+                <form>
+                    <div class="form-group">
+                        <label for="bookTitle" class="col-sm-2 col-form-label"><strong>Title</strong></label>
+                        <div class="col-sm-10">
+                            <input class="form-control" id="bookTitle" type="text" [(ngModel)]="book.title"
+                                placeholder="Enter Title" name="title" required=>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="bookAuthor" class="col-sm-2 col-form-label"><strong>Author</strong></label>
+                        <div class="col-sm-10">
+                            <input class="form-control" id="bookAuthor" [(ngModel)]="book.author" type="text"
+                                placeholder="Enter Author" name="author" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="bookRating" class="col-sm-2 col-form-label"><strong>Rating</strong></label>
+                        <div class="col-sm-10">
+                            <input id="bookRating" class="form-control-range" [(ngModel)]="book.rating" type="range"
+                                 name="rating" min="0" max="5" value="3" oninput="bookRatingDisplay.value=bookRating.value"/>
+                                 <output style="font-family:sans-serif;margin-left: 3px;" id="bookRatingDisplay"></output>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="bookPrice" class="col-sm-2 col-form-label"><strong>Price</strong></label>
+                        <div class="col-sm-10">
+                            <input class="form-control" id="bookPrice" [(ngModel)]="book.price" type="number"
+                                placeholder="Enter Price" min="0" name="price" value=0/>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="bookCategory" class="col-sm-2 col-form-label"><strong>Category</strong></label>
+                        <select class="custom-select" name="category" [(ngModel)]="book.category"
+                            id="inputGroupSelect03" aria-label="Example select with button addon">
+                            <option selected>Choose...</option>
+                            <option value="Health/Fitness">Health/Fitness</option>
+                            <option value="Fictional">Fictional</option>
+                            <option value="Scifi">Scifi</option>
+                            <option value="Romance">Romance</option>
+                            <option value="Thriller">Thriller</option>
+                            <option value="Religion">Religion</option>
+                            <option value="Story">Story</option>
+                            <option value="Drama">Drama</option>
+                            <option value="Humour">Humour</option>
+                        </select>
+                    </div>
+                    <div>
+                        <input type="file" #addBookImage class="form-control" name="image" (change)="onImageUpload($event)" id="customFile" accept="image/png, image/jpeg" />
+                    </div>
+                    <div class="form-group text-center ">
+                        <button class="btn btn-secondary align-center m-2" (click)="addBook()"
+                            data-toggle="button">Submit</button>
+                        <button class="btn btn-secondary align-center" type="reset" data-toggle="button">Reset</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,3 @@
+Creating a user component inside app : ng generate component user/add-user
+Creating a User service class: ng generate service user/UserService 
+Create a user-class: ng generate class user/UserClass
